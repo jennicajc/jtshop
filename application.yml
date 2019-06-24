@@ -1,21 +1,21 @@
 server:
-  port: 9050
+  port: 9060
   servlet:
     context-path: /
 spring:
-  application:   #¶¨Òå·şÎñÃû³Æ
+  application:   #å®šä¹‰æœåŠ¡åç§°
     name: springcloud-zuul
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:4999/eureka
   instance:
-    instance-id: springcloud-zuul-9050             #¶¨ÒåÎ¢·şÎñµÄÃû³Æ
-    prefer-ip-address: true                        #ÊÇ·ñÏÔÊ¾IPºÍ¶Ë¿Ú
+    instance-id: springcloud-zuul-9050             #å®šä¹‰å¾®æœåŠ¡çš„åç§°
+    prefer-ip-address: true                        #æ˜¯å¦æ˜¾ç¤ºIPå’Œç«¯å£
 zuul:
-  #prefix: /                             #Í¨¹ıÍ³Ò»µÄ¹«¹²Ç°×º·ÃÎÊ
-  #ignored-services: springcloud-user    #½ûÖ¹Í¨¹ıÄ³¸ö·şÎñÃû·ÃÎÊ
-  ignored-services: "*"                  #½ûÖ¹Í¨¹ıÈ«²¿·şÎñÃû·ÃÎÊ
+  #prefix: /                             #é€šè¿‡ç»Ÿä¸€çš„å…¬å…±å‰ç¼€è®¿é—®
+  #ignored-services: springcloud-user    #ç¦æ­¢é€šè¿‡æŸä¸ªæœåŠ¡åè®¿é—®
+  ignored-services: "*"                  #ç¦æ­¢é€šè¿‡å…¨éƒ¨æœåŠ¡åè®¿é—®
   routes:
     user-service:
-      serviceId: customer-shop           #ĞèÒª·şÎñ¶ËÓ³ÉäÂ·¾¶Ãû³Æ
+      serviceId: customer-shop           #éœ€è¦æœåŠ¡ç«¯æ˜ å°„è·¯å¾„åç§°
